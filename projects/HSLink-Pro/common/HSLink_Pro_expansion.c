@@ -263,13 +263,13 @@ void HSP_Loop(void)
     // 检测VREF电压
     double vref = Get_VREF_Voltage();
 
-    if (vref > 0.6) {
-        Power_Set_TVCC_Voltage(vref);
+    // if (vref > 0.6) {
+    //     Power_Set_TVCC_Voltage(vref);
+    //     Power_Turn_On();
+    // } else {
         Power_Turn_On();
-    } else {
-        Power_Turn_Off();
         Power_Set_TVCC_Voltage(3.3);
-    }
+    // }
 
     if (BOOT_Button_Pressed()) {
         printf("Enter Bootloader\n");
